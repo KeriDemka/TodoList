@@ -1,0 +1,38 @@
+.list {
+
+    &__item,
+    &__item__label {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+    }
+
+    &__item {
+        height: 28px;
+
+        &-button {
+            height: 24px;
+            color: #ffffff;
+            padding-left: 19px;
+            padding-right: 19px;
+            background-color: #EA5959;
+            border: none;
+            border-radius: 8px;
+        }
+    }
+
+    &__item__label {
+        font-weight: 400;
+        font-size: 18px;
+        color: #5A5A5A;
+
+        &--inactive {
+            text-decoration: line-through;
+	        text-decoration-color: red;
+        }
+
+        &--active {
+            text-decoration: none;
+        }
+    }
+}

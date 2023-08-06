@@ -1,0 +1,13 @@
+<section class="section">
+    <label class="section-text" for="newToDo">Новая задача</label>
+    <input class="section-input" type="text" id="newToDo" placeholder="Введите задачу" [(ngModel)]="newTodo" (keyup.enter)="addTodo(newTodo)" required>
+    <button class="section-button" (click)="addTodo(newTodo)" [disabled]="!newTodo">Добавить</button>
+  </section>
+  <section class="list-section">
+    <app-todo-item
+        *ngFor="let todo of todos"
+        [todo]="todo"
+        (delete)="deleteTodo($event)"
+        (toggle)="toggleCompletion()"
+    ></app-todo-item>
+</section>
