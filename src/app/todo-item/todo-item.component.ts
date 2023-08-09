@@ -11,18 +11,25 @@ export class TodoItemComponent implements OnInit {
   @Input() todo!: Todo;
   // События которые будут отправлять задачу, которую нужно удалить или у которой нужно изменить статус
   @Output() delete = new EventEmitter<number>();
-  @Output() toggle = new EventEmitter<number>();
+  @Output() update = new EventEmitter();
+
+  editEnabled: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  // Обработчик кнопки delete, который вызывает событие delete
+  // Обработчик кнопки 'удалить', который вызывает событие delete
   onDelete(): void { 
     this.delete.emit(this.todo.id);
   }
 
-  onToggle(): void {
-    this.toggle.emit(this.todo.id);
+  onCompleted(): void {
+    this.update.emit();
+  }
+
+  onToggleEdit(): void {
+    this.editEnabled = !this.editEnabled;
+    this.update.emit();
   }
 }

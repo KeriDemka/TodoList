@@ -10,29 +10,51 @@
     &__item {
         height: 28px;
 
+        &-edit-inpit {
+            height: 100%;
+            border: none;
+            padding: 10px 27px;
+            background-color: #F3F3F3;
+            border-radius: 8px;
+
+            &[disabled] {
+                background-color: transparent;
+            }
+        }
+
+        &-edit-button,
+        &-save-button,
         &-button {
             height: 24px;
             color: #ffffff;
             padding-left: 19px;
             padding-right: 19px;
-            background-color: #EA5959;
             border: none;
             border-radius: 8px;
         }
-    }
 
-    &__item__label {
-        font-weight: 400;
-        font-size: 18px;
-        color: #5A5A5A;
-
-        &--inactive {
-            text-decoration: line-through;
-	        text-decoration-color: red;
+        &-edit-button,
+        &-save-button {
+            background-color: #1FBAFF;
         }
 
-        &--active {
-            text-decoration: none;
+        &-button {
+            background-color: #EA5959;
+        }
+    
+        &__label {
+            font-weight: 400;
+            font-size: 18px;
+            color: #5A5A5A;
+    
+            &--inactive {
+                text-decoration: line-through;
+                text-decoration-color: red;
+            }
+    
+            &--active {
+                text-decoration: none;
+            }
         }
     }
 }

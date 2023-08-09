@@ -35,12 +35,7 @@ export class TodoService {
     this.updateLocalStorage();
   }
 
-  // обновление списка задач в localStorage после изменения todo.completed с помощю ngModel
-  toggleCompletion(): void {
-    this.updateLocalStorage();
-  }
-
-  private updateLocalStorage(): void {
+  updateLocalStorage(): void {
     localStorage.setItem('todos', JSON.stringify(this.todos))
   }
 

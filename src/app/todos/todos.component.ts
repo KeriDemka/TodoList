@@ -9,6 +9,7 @@ import { Todo, TodoService } from '../todo.service';
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
 
+  // Свойство для двусторонней привязки к полю ввода
   newTodo: string = '';
 
   constructor(private todoService: TodoService) {}
@@ -32,7 +33,7 @@ export class TodosComponent implements OnInit {
     this.todoService.deleteTodo(id);
   }
 
-  toggleCompletion(): void {
-    this.todoService.toggleCompletion();
+  updateTodo(): void {
+    this.todoService.updateLocalStorage();
   }
 }

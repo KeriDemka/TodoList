@@ -1,7 +1,10 @@
 <div class="list__item item">
     <label class="list__item__label" [ngClass]=" todo.completed != true ? 'list__item__label--active' : 'list__item__label--inactive'">
-        <input class="list__item__label-input" type="checkbox" [(ngModel)]="todo.completed" (change)="onToggle()">
-        {{ todo.title }}
+        <input class="list__item__label-input" type="checkbox" [(ngModel)]="todo.completed" (change)="onCompleted()">
+        <input class="list__item-edit-inpit" id="edit-input" type="text" value="{{ todo.title }}" [(ngModel)]="todo.title" [disabled]="!editEnabled">
     </label>
+    <button class="list__item-edit-button" (click)="onToggleEdit()">
+        {{ editEnabled ? 'Сохранить' : 'Редактировать' }}
+    </button>
     <button class="list__item-button" (click)="onDelete()">Удалить</button>
 </div>
